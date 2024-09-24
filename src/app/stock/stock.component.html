@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groceries Stock</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./stock.component.css">
+  <style>
+    .card {
+      position: relative;
+    }
+    .card .btn-plus {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .card .btn-plus:hover {
+      background-color: #218838;
+    }
+    .card .count {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <button id="count-button" style="position: absolute; top: 100px; right: 10px; padding: 10px 15px; background-color: #28a745; color: white; border: none; border-radius: 5px; font-size: 18px;">
+    0
+  </button>
+
+  <div class="container my-4">
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-3">
+        <div class="card h-100" style="border-radius: 20px; border-color: gray; ">
+          <img src="../../assets/stock/Banana.jpg" class="card-img-top" alt="Banana">
+          <div class="card-body">
+            <h5 class="card-title fs-4 fw-300">Banana</h5>
+            <p class="card-text">
+              Kg Brought: <strong>100</strong> <br>
+              Kg Left: <strong>40</strong> <br>
+              Cost per Kg: <strong>Rs.2.50</strong>
+            </p>
+            <button class="btn-plus" onclick="incrementCounter(this)">
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="count">0</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="col-md-3">
+        <div class="card h-100" style="border-radius: 20px; border-color: gray; ">
+          <img src="../../assets/stock/Ginger.jpg" class="card-img-top" alt="Ginger">
+          <div class="card-body">
+            <h5 class="card-title fs-4 fw-300">Ginger</h5>
+            <p class="card-text">
+              Kg Brought: <strong>100</strong> <br>
+              Kg Left: <strong>40</strong> <br>
+              Cost per Kg: <strong>Rs.2.50</strong>
+            </p>
+            <button class="btn-plus" onclick="incrementCounter(this)">
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="count">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-3">
+        <div class="card h-100" style="border-radius: 20px; border-color: gray; ">
+          <img src="../../assets/stock/Green Peas.jpg" class="card-img-top" alt="Green Peas">
+          <div class="card-body">
+            <h5 class="card-title fs-4 fw-300">Green Peas</h5>
+            <p class="card-text">
+              Kg Brought: <strong>100</strong> <br>
+              Kg Left: <strong>40</strong> <br>
+              Cost per Kg: <strong>Rs.2.50</strong>
+            </p>
+            <button class="btn-plus" onclick="incrementCounter(this)">
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="count">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-3">
+        <div class="card h-100" style="border-radius: 20px; border-color: gray; ">
+          <img src="../../assets/stock/Milk.jpg" class="card-img-top" alt="Milk">
+          <div class="card-body">
+            <h5 class="card-title fs-4 fw-300">Milk</h5>
+            <p class="card-text">
+              Kg Brought: <strong>100</strong> <br>
+              Kg Left: <strong>40</strong> <br>
+              Cost per Kg: <strong>Rs.2.50</strong>
+            </p>
+            <button class="btn-plus" onclick="incrementCounter(this)">
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="count">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-3">
+        <div class="card h-100" style="border-radius: 20px; border-color: gray; ">
+          <img src="../../assets/stock/Onion.jpg" class="card-img-top" alt="Onion">
+          <div class="card-body">
+            <h5 class="card-title fs-4 fw-300">Onion</h5>
+            <p class="card-text">
+              Kg Brought: <strong>100</strong> <br>
+              Kg Left: <strong>40</strong> <br>
+              Cost per Kg: <strong>Rs.2.50</strong>
+            </p>
+            <button class="btn-plus" onclick="incrementCounter(this)">
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="count">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-3">
+        <div class="card h-100" style="border-radius: 20px; border-color: gray; ">
+          <img src="../../assets/stock/Pickle.jpg" class="card-img-top" alt="Pickle">
+          <div class="card-body">
+            <h5 class="card-title fs-4 fw-300">Pickle</h5>
+            <p class="card-text">
+              Kg Brought: <strong>100</strong> <br>
+              Kg Left: <strong>40</strong> <br>
+              Cost per Kg: <strong>Rs.2.50</strong>
+            </p>
+            <button class="btn-plus" onclick="incrementCounter(this)">
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="count">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="col-md-3">
+        <div class="card h-100" style="border-radius: 20px; border-color: gray; ">
+          <img src="../../assets/stock/Wheat.jpg" class="card-img-top" alt="Wheat">
+          <div class="card-body">
+            <h5 class="card-title fs-4 fw-300">Wheat</h5>
+            <p class="card-text">
+              Kg Brought: <strong>100</strong> <br>
+              Kg Left: <strong>40</strong> <br>
+              Cost per Kg: <strong>Rs.2.50</strong>
+            </p>
+            <button class="btn-plus" onclick="incrementCounter(this)">
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="count">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="col-md-3">
+        <div class="card h-100" style="border-radius: 20px; border-color: gray; ">
+          <img src="../../assets/stock/Rice.jpg" class="card-img-top" alt="Rice">
+          <div class="card-body">
+            <h5 class="card-title fs-4 fw-300">Rice</h5>
+            <p class="card-text">
+              Kg Brought: <strong>100</strong> <br>
+              Kg Left: <strong>40</strong> <br>
+              Cost per Kg: <strong>Rs.2.50</strong>
+            </p>
+            <button class="btn-plus" onclick="incrementCounter(this)">
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="count">0</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+  <!-- Font Awesome JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+  
+  <script>
+    let totalCount = 0;
+
+    function incrementCounter(button) {
+      totalCount++;
+      document.getElementById('count-button').innerText = totalCount;
+
+      // Update the count on the clicked card
+      const cardBody = button.closest('.card-body');
+      const countElement = cardBody.querySelector('.count');
+      let cardCount = parseInt(countElement.innerText);
+      cardCount++;
+      countElement.innerText = cardCount;
+    }
+  </script>
+  
+  
+</body>
+</html>

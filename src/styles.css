@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+.hompage
+{
+    color:aquamarine;
+    margin-top: 180px;
+    margin-left: 50px;
+    text-align: center;
+}
+html,body { height:100%;}
+body { margin: 0; font-family:Roboto,"Helvetica Neue", sans-serif;}
+.example-icon {
+    padding : 0 18 px;
+}
+.example -spacer {
+    flex: 1 1 auto;
+}
+.mat-drawer-container{
+    background-color:#535351d7;
+}
+.mat-drawer {
+    background-color:#00ccff;
+}
+.mat-toolbar {
+    background: burlywood;
+    color:pink;
+  
+}
+.mat-elevation-z5
+{
+    position:relative;
+    z-index:2;
+}
+.mat-sidenav a:hover {
+    color:pink;
+}
+
+.custom-toolbar {
+    float: right;
+  }
